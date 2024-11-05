@@ -1,0 +1,63 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-tails2tell-separator {
+	.separator{
+		aspect-ratio: 396/121;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: auto;
+		position: relative;
+		bottom: -2px;
+	}
+	.separator-top{
+		background-image: url('../assets/top-separator-primary.svg');
+		&.secondary{
+			background-image: url('../assets/top-separator-secondary.svg');
+		}
+	}
+	.separator-bottom{
+		background-image: url('../assets/bottom-separator-primary.svg');
+		&.secondary{
+			background-image: url('../assets/bottom-separator-secondary.svg');
+		}
+	}
+	.separator-footer{
+		background-image: url('../assets/footer-separator-primary.svg');
+		&.secondary{
+			background-image: url('../assets/footer-separator-secondary.svg');
+		}
+	}
+}
+
+@media (min-width: 500px){
+	.wp-block-tails2tell-separator{
+		.separator{
+			aspect-ratio: 1514/121;
+		}
+		.separator-top{
+			background-image: url('../assets/top-separator-desktop-primary.svg');
+			&.secondary{
+				background-image: url('../assets/top-separator-desktop-secondary.svg');
+			}
+		}
+		.separator-bottom{
+			aspect-ratio: 1513/164;
+			background-image: url('../assets/bottom-separator-desktop-primary.svg');
+			&.secondary{
+				background-image: url('../assets/bottom-separator-desktop-secondary.svg');
+			}
+		}
+		.separator-footer{
+			background-image: url('../assets/footer-separator-desktop-primary.svg');
+			&.secondary{
+				background-image: url('../assets/footer-separator-desktop-secondary.svg');
+			}
+		}
+	}
+}

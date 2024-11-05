@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tails2tell/decorative-banner",
+  "version": "0.1.0",
+  "title": "Decorative Banner",
+  "category": "design",
+  "icon": "pets",
+  "description": "Decorative banner with 4 illustrations hidden according the viewport width.",
+  "example": {},
+  "supports": {
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "textdomain": "decorative-banner",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "illustrations": {
+      "type": "array",
+      "default": []
+    },
+    "hasRandomIllustrations": {
+      "type": "boolean",
+      "default": true
+    },
+    "numberOfItems": {
+      "type": "integer",
+      "default": 4
+    }
+  }
+}

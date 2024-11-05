@@ -1,0 +1,236 @@
+{
+    "version": 3,
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "title": "Tails to tell",
+    "description": "A playful WordPress theme for tailstotell.ca.",
+    "settings": {
+        "appearanceTools": true,
+        "color": {
+            "defaultPalette": false,
+            "palette": [
+                {
+                    "color": "#ffffff",
+                    "name": "White",
+                    "slug": "white"
+                },
+                {
+                    "color": "#222222",
+                    "name": "Black",
+                    "slug": "black "
+                },
+                {
+                    "color": "#155640",
+                    "name": "Green Pea",
+                    "slug": "green-pea"
+                },
+                {
+                    "color": "#F7E6B1",
+                    "name": "Pale Peach",
+                    "slug": "pale-peach"
+                },
+                {
+                    "color": "#f1a41f",
+                    "name": "Sunshade",
+                    "slug": "sunshade"
+                },
+                {
+                    "color": "#ef4e23",
+                    "name": "Orange Cat",
+                    "slug": "orange-cat"
+                }
+            ]
+        },
+        "typography": {
+            "defaultFontSizes": false,
+            "fontFamilies": [
+                {
+                    "name": "Quicksand",
+                    "slug": "quicksand",
+                    "fontFamily": "quicksand",
+                    "fontFace": [
+                        {
+                            "fontFamily": "quicksand",
+                            "fontStyle": "light",
+                            "fontWeight": "300",
+                            "src": [
+                                "file:./assets/fonts/Quicksand-Light.ttf"
+                            ]
+                        },
+                        {
+                            "fontFamily": "quicksand",
+                            "fontStyle": "regular",
+                            "fontWeight": "400",
+                            "src": [
+                                "file:./assets/fonts/Quicksand-Regular.ttf"
+                            ]
+                        },
+                        {
+                            "fontFamily": "quicksand",
+                            "fontStyle": "Medium",
+                            "fontWeight": "500",
+                            "src": [
+                                "file:./assets/fonts/Quicksand-Medium.ttf"
+                            ]
+                        },
+                        {
+                            "fontFamily": "quicksand",
+                            "fontStyle": "Semi Bold",
+                            "fontWeight": "600",
+                            "src": [
+                                "file:./assets/fonts/Quicksand-SemiBold.ttf"
+                            ]
+                        },
+                        {
+                            "fontFamily": "quicksand",
+                            "fontStyle": "Bold",
+                            "fontWeight": "700",
+                            "src": [
+                                "file:./assets/fonts/Quicksand-Bold.ttf"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "Lilita One",
+                    "slug": "lilita-one",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Lilita One",
+                            "fontStyle": "normal",
+                            "fontWeight": "400",
+                            "src": [
+                                "file:./assets/fonts/LilitaOne-Regular.ttf"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "fontFamily": "Gloria Hallelujah",
+                    "slug": "gloria-hallelujah",
+                    "fontFace": [
+                        {
+                            "fontFamily": "Gloria Hallelujah",
+                            "fontStyle": "normal",
+                            "fontWeight": "400",
+                            "src": [
+                                "file:./assets/fonts/GloriaHallelujah-Regular.ttf"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "fontSizes": [
+                {
+                    "name": "Small",
+                    "slug": "small",
+                    "size": "1rem",
+                    "fluid": false
+                },
+                {
+                    "fluid": false,
+                    "name": "Normal",
+                    "size": "1.2rem",
+                    "slug": "normal"
+                },
+                {
+                    "fluid": false,
+                    "name": "Medium",
+                    "size": "3rem",
+                    "slug": "medium"
+                },
+                {
+                    "fluid": false,
+                    "name": "Large",
+                    "size": "4rem",
+                    "slug": "large"
+                }
+            ]
+        },
+        "shadow": {
+            "presets": [
+                {"name": "Shadow", "shadow": "0px 6px 5px 0px rgba(0, 0, 0, 0.25);", "slug": "shadow"}
+            ]
+        }
+    },
+    "styles": {
+        "blocks": {
+            "core/post-content":{
+                "spacing": {
+                    "margin": {
+                        "top":"-2px"
+                    }
+                }
+            }
+        },
+        "elements": {
+            "button":{
+                "border": {
+                    "radius": "9999px"
+                },
+                "color": {
+                    "background": "var(--wp--preset--color--orange-cat)",
+                    "text": "var(--wp--preset--color--white)"
+                },
+                "spacing": {
+                    "padding": {
+                        "bottom": "0",
+                        "left": "1.25rem",
+                        "top": "0",
+                        "right": "1.25rem"
+                    },
+                    "margin": {
+                        "bottom": "0.5rem"
+                    }
+                },
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--gloria-hallelujah)",
+                    "fontWeight": "700",
+                    "lineHeight": "2.5rem",
+                    "textTransform": "capitalize"
+                },
+                "shadow": "4px 4px 0 0 var(--wp--preset--color--sunshade)"
+            },
+            "h1":{
+                "color": {
+                    "text": "var(--wp--preset--color--pale-peach)"
+                },
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--lilita-one)",
+                    "fontWeight": "400",
+                    "fontSize": "var(--wp--preset--font-size--medium)"
+                },
+                "css": "text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)"
+            },
+            "h2":{
+                "color": {
+                    "text": "var(--wp--preset--color--green-pea)"
+                },
+                "typography": {
+                    "fontFamily": "var(--wp--preset--font-family--lilita-one)",
+                    "fontWeight": "400",
+                    "fontSize": "36px"
+                }
+            }
+        },
+        "typography": {
+            "fontFamily": "var(--wp--preset--font-family--quicksand)",
+            "fontSize": "var(--wp--preset--font-size--normal)"
+        }
+    },
+    "customTemplates": [
+        
+    ],
+    "templateParts": [
+        {
+            "area": "header",
+            "name": "header",
+            "title": "Header"
+        },
+        {
+			"area": "footer",
+			"name": "footer",
+			"title": "Footer"
+		}
+    ]
+    
+}

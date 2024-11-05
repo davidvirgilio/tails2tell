@@ -1,0 +1,57 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ */
+
+.wp-block-tails2tell-section {
+	display: flex;
+	flex-direction: column;
+	margin-top: 0 !important; 
+	section.section-content{
+		padding: 1rem 3rem;
+	}
+	.separator{
+		aspect-ratio: 396/121;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+		height: auto;
+		position: relative;
+	}
+	.separator-top{
+		background-image: url('../../../assets/images/separators/top-separator-primary.svg');
+		bottom: -2px;
+		&.secondary{
+			background-image: url('../../../assets/images/separators/top-separator-secondary.svg');
+		}
+	}
+	.separator-bottom{
+		background-image: url('../../../assets/images/separators/bottom-separator-primary.svg');
+		top: -2px;
+		&.secondary{
+			background-image: url('../../../assets/images/separators/bottom-separator-secondary.svg');
+		}
+	}
+}
+
+@media (min-width: 765px){
+	.wp-block-tails2tell-section{
+		.separator{
+			aspect-ratio: 1514/121;
+		}
+		.separator-top{
+			background-image: url('../../../assets/images/separators/top-separator-desktop-primary.svg');
+			&.secondary{
+				background-image: url('../../../assets/images/separators/top-separator-desktop-secondary.svg');
+			}
+		}
+		.separator-bottom{
+			aspect-ratio: 1513/164;
+			background-image: url('../../../assets/images/separators/bottom-separator-desktop-primary.svg');
+			&.secondary{
+				background-image: url('../../../assets/images/separators/bottom-separator-desktop-secondary.svg');
+			}
+		}
+	}
+}

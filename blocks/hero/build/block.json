@@ -1,0 +1,79 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tails2tell/hero",
+  "version": "0.1.0",
+  "title": "Hero",
+  "category": "theme",
+  "icon": "smiley",
+  "description": "Hero banner for tails2tell theme.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "hero",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "object"
+    },
+    "class": {
+      "type": "string"
+    },
+    "isPrimary": {
+      "type": "boolean",
+      "default": true
+    },
+    "isCustomTitle": {
+      "type": "boolean",
+      "default": false
+    },
+    "includeButtons": {
+      "type": "boolean",
+      "default": true
+    },
+    "numberOfButtons": {
+      "type": "integer",
+      "default": 1
+    },
+    "buttons": {
+      "type": "array",
+      "selector": ".hero-button",
+      "default": [
+        {
+          "label": "Button 1",
+          "url": "",
+          "icon": "none"
+        }
+      ],
+      "query": {
+        "label": {
+          "type": "string",
+          "source": "html"
+        },
+        "url": {
+          "type": "string",
+          "source": "attribute",
+          "attribute": "href"
+        },
+        "icon": {
+          "type": "string"
+        }
+      }
+    },
+    "x": {
+      "type": "integer",
+      "default": 50
+    },
+    "y": {
+      "type": "integer",
+      "default": 50
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tails2tell/adoption-categories",
+  "version": "0.1.0",
+  "title": "Adoption Categories",
+  "category": "widgets",
+  "icon": "pets",
+  "description": "A showcase block featuring four highlighted images with button links to adoptable cat categories, designed to guide visitors to specific adoption sections on the site.",
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": true
+  },
+  "textdomain": "adoption-categories",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "source": "html",
+      "selector": "h2",
+      "default": "Check out our cats"
+    },
+    "legend": {
+      "type": "string",
+      "source": "html",
+      "selector": "span",
+      "default": "Looking to add to your family?"
+    }
+  }
+}
