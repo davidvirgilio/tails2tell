@@ -32,7 +32,8 @@ function Edit({
 }) {
   const {
     title,
-    legend
+    legend,
+    categories
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -51,6 +52,13 @@ function Edit({
           title
         }),
         placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Add a title', 'adoption-categories-block')
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("nav", {
+        children: categories.map((category, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+            href: category.url,
+            children: category.name
+          }, index)
+        }))
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUploadCheck, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.MediaUpload, {
           allowedTypes: 'image',
@@ -147,7 +155,8 @@ function save({
 }) {
   const {
     title,
-    legend
+    legend,
+    categories
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save(),
@@ -157,6 +166,13 @@ function save({
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
       tagName: "h2",
       value: title
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("nav", {
+      children: categories.map((category, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+          href: category.url,
+          children: category.name
+        }, index)
+      }))
     })]
   });
 }
@@ -243,7 +259,7 @@ module.exports = window["wp"]["i18n"];
   \********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"tails2tell/adoption-categories","version":"0.1.0","title":"Adoption Categories","category":"widgets","icon":"pets","description":"A showcase block featuring four highlighted images with button links to adoptable cat categories, designed to guide visitors to specific adoption sections on the site.","example":{},"supports":{"html":false,"align":true},"textdomain":"adoption-categories","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"title":{"type":"string","source":"html","selector":"h2","default":"Check out our cats"},"legend":{"type":"string","source":"html","selector":"span","default":"Looking to add to your family?"}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"tails2tell/adoption-categories","version":"0.1.0","title":"Adoption Categories","category":"widgets","icon":"pets","description":"A showcase block featuring four highlighted images with button links to adoptable cat categories, designed to guide visitors to specific adoption sections on the site.","example":{},"supports":{"html":false,"align":true},"textdomain":"adoption-categories","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"title":{"type":"string","source":"html","selector":"h2","default":"Check out our cats"},"legend":{"type":"string","source":"html","selector":"span","default":"Looking to add to your family?"},"categories":{"type":"array","default":[{"name":"Cats","url":"","imgUrl":""},{"name":"Kittens","url":"","imgUrl":""},{"name":"Special Needs","url":"","imgUrl":""},{"name":"Barn Buddies","url":"","imgUrl":""}]}}}');
 
 /***/ })
 

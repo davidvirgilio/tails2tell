@@ -29,6 +29,31 @@
       "source": "html",
       "selector": "span",
       "default": "Looking to add to your family?"
+    },
+    "categories": {
+      "type": "array",
+      "default": [
+        {
+          "name": "Cats",
+          "url": "",
+          "imgUrl": ""
+        },
+        {
+          "name": "Kittens",
+          "url": "",
+          "imgUrl": ""
+        },
+        {
+          "name": "Special Needs",
+          "url": "",
+          "imgUrl": ""
+        },
+        {
+          "name": "Barn Buddies",
+          "url": "",
+          "imgUrl": ""
+        }
+      ]
     }
   }
 }

@@ -25,13 +25,17 @@
       "type": "array",
       "default": []
     },
-    "hasRandomIllustrations": {
-      "type": "boolean",
-      "default": true
+    "size": {
+      "type": "integer",
+      "default": 150
     },
     "numberOfItems": {
       "type": "integer",
       "default": 4
+    },
+    "isWhite": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

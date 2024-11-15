@@ -1,0 +1,104 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "tails2tell/image-frame",
+  "version": "0.1.0",
+  "title": "Image Frame",
+  "category": "media",
+  "icon": "pets",
+  "description": "Irregular frame for images.",
+  "example": {},
+  "supports": {
+    "align": true,
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    },
+    "customClassName": true,
+    "color": {
+      "text": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true,
+      "fontFamily": true,
+      "textAlign": true
+    }
+  },
+  "textdomain": "image-frame",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "label": {
+      "type": "string",
+      "source": "html",
+      "selector": "a",
+      "default": "label"
+    },
+    "img": {
+      "type": "object",
+      "query": {
+        "url": {
+          "type": "string"
+        },
+        "alt": {
+          "type": "string"
+        },
+        "caption": {
+          "type": "string",
+          "source": "html",
+          "selector": "p"
+        }
+      }
+    },
+    "link": {
+      "type": "string",
+      "source": "attribute",
+      "attribute": "href",
+      "default": "/"
+    },
+    "position": {
+      "type": "object",
+      "default": {
+        "x": 50,
+        "y": 50
+      }
+    },
+    "hasButton": {
+      "type": "boolean",
+      "default": false
+    },
+    "hasCaption": {
+      "type": "boolean",
+      "default": false
+    },
+    "hasCustomCaption": {
+      "type": "boolean",
+      "default": false
+    },
+    "thickness": {
+      "type": "integer",
+      "default": 100
+    },
+    "width": {
+      "type": "integer",
+      "default": 300
+    },
+    "customCaption": {
+      "type": "string",
+      "source": "html",
+      "selector": "p"
+    },
+    "frameColor": {
+      "type": "string",
+      "default": "#F7E6B1"
+    },
+    "frameId": {
+      "type": "number",
+      "default": 0
+    }
+  }
+}

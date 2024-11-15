@@ -27,6 +27,21 @@
     "hasStyle": {
       "type": "boolean",
       "default": true
+    },
+    "hasBottom": {
+      "type": "boolean",
+      "default": true
+    },
+    "maxWidth": {
+      "type": "string",
+      "default": "1100px"
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "inline": "3rem",
+        "block": "1rem"
+      }
     }
   }
 }

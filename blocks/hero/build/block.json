@@ -18,7 +18,9 @@
   "viewScript": "file:./view.js",
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "source": "html",
+      "selector": "h1"
     },
     "image": {
       "type": "object"
@@ -30,7 +32,11 @@
       "type": "boolean",
       "default": true
     },
-    "isCustomTitle": {
+    "hasCustomTitle": {
+      "type": "boolean",
+      "default": false
+    },
+    "hasCustomImage": {
       "type": "boolean",
       "default": false
     },
@@ -74,6 +80,10 @@
     "y": {
       "type": "integer",
       "default": 50
+    },
+    "thickness": {
+      "type": "integer",
+      "default": 100
     }
   }
 }

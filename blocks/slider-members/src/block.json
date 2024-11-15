@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "tails2tell/slider-members",
+	"version": "0.1.0",
+	"title": "Members Slider",
+	"category": "widgets",
+	"icon": "groups",
+	"description": "A card slider to introduce board members and staff.",
+	"example": {},
+	"supports": {
+		"align": true,
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"html": false,
+		"spacing": {
+			"margin":true,
+			"padding":true
+		},
+		"typography": {
+			"fontSize": true
+		}
+	},
+	"textdomain": "slider-members",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"cards": {
+			"type":"array",
+			"default": []
+		},
+		"showCardsQuantity": {
+			"type": "boolean",
+			"default": false
+		},
+		"setCardsQuantity": {
+			"type": "number",
+			"default": 1,
+			"min": 1
+		}
+	}
+}

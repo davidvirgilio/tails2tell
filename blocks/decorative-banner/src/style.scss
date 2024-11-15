@@ -8,16 +8,16 @@
 $illustrations: 'cat-face','stretching','food-can','toy-feather','toy-feather-2','plate','lying','paw','fish','mice','bell','yarn';
 
 .wp-block-tails2tell-decorative-banner {
-	background-color: transparent;
-	display: flex;
-	justify-content: center;
-	gap: 5rem;
+	.decoration-wrapper{
+		display: flex;
+		justify-content: center;
+		gap: 5rem;
+	}
 	.illustration{
 		aspect-ratio: 1;
 		background-repeat: no-repeat;
 		background-size: contain;
 		height: auto;
-		width: 150px;
 
 		&.child-2 ,&.child-3, &.child-4{
 			display: none;
@@ -26,6 +26,9 @@ $illustrations: 'cat-face','stretching','food-can','toy-feather','toy-feather-2'
 	@each $illustration in $illustrations{
 		.#{$illustration}{
 			background-image: url('../../../assets/images/illustrations/illustration-#{$illustration}.svg');
+			&.white{
+				background-image: url('../../../assets/images/illustrations/illustration-#{$illustration}-white.svg');
+			}
 		}
 	}
 }

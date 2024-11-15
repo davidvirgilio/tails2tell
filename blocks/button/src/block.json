@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "tails2tell/button",
+	"version": "0.1.0",
+	"title": "Button with icon",
+	"category": "design",
+	"parent": ["core/buttons"],
+	"icon": "button",
+	"description": "A button with theme icons.",
+	"example": {},
+	"supports": {
+		"html": false,
+		"typography": {
+			"textAlign": true
+		},
+		"spacing": {
+			"margin": true
+		}
+	},
+	"textdomain": "button",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js",
+	"attributes": {
+		"url": {
+			"type": "string"
+		},
+		"label": {
+			"type": "string",
+			"source": "html",
+			"selector": "span"
+		},
+		"opensInNewWindow":{
+			"type": "boolean",
+			"default": false
+		},
+		"icon":{
+			"type": "string",
+			"default": ""
+		}
+	}
+}

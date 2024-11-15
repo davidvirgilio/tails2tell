@@ -1,0 +1,67 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./slider-members/src/editor.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-tails2tell-slider-members {
+  border: 1px dotted #f00;
+  justify-content: flex-start;
+}
+.wp-block-tails2tell-slider-members .card-container .swiper-wrapper {
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.wp-block-tails2tell-slider-members .card-container .swiper-button-prev, .wp-block-tails2tell-slider-members .card-container .swiper-button-next {
+  display: none;
+}
+.wp-block-tails2tell-slider-members .card-wrapper {
+  align-items: center;
+  width: 18rem !important;
+}
+.wp-block-tails2tell-slider-members .card-wrapper button {
+  aspect-ratio: 1;
+  animation: 0.2s ease-in-out scale-out;
+  background-color: #fff;
+  border-radius: 50%;
+  border: dashed 2px #007cba;
+  color: #007cba;
+  height: 100%;
+  justify-content: center;
+  padding: 0;
+  width: 90% !important;
+}
+.wp-block-tails2tell-slider-members .card-wrapper button:hover {
+  animation: 0.2s ease-in-out scale;
+  transform: scale(1.1);
+}
+.wp-block-tails2tell-slider-members .card-wrapper button p {
+  font-size: large;
+  font-weight: 600;
+  max-width: 130px;
+}
+.wp-block-tails2tell-slider-members .card-wrapper button img {
+  width: -webkit-fill-available;
+  margin: 0 !important;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes scale-out {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/*# sourceMappingURL=index.css.map*/

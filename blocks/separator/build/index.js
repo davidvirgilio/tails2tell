@@ -287,7 +287,7 @@ module.exports = window["wp"]["i18n"];
   \**********************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"tails2tell/separator","version":"0.1.0","title":"Separator","category":"theme, design","description":"Separator options for tails2tell style.","example":{},"supports":{"html":false},"textdomain":"separator","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"separatorType":{"type":"string","default":"top"},"isPrimary":{"type":"boolean","default":true}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"tails2tell/separator","version":"0.1.0","title":"Separator","category":"design","description":"Separator options for tails2tell style.","example":{},"supports":{"html":false},"textdomain":"separator","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"separatorType":{"type":"string","default":"top"},"isPrimary":{"type":"boolean","default":true}}}');
 
 /***/ })
 

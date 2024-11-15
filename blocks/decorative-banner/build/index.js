@@ -35,9 +35,11 @@ function Edit({
 }) {
   const {
     illustrations,
-    hasRandomIllustrations,
-    numberOfItems
+    numberOfItems,
+    size,
+    isWhite
   } = attributes;
+  const [color, setColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useState)('');
   const illustrationOptions = [{
     label: 'Bell',
     value: 'bell'
@@ -90,7 +92,15 @@ function Edit({
       illustrations: randomIllustrations
     });
   };
+  const palette = [{
+    name: 'Green Pea',
+    color: '#155640'
+  }, {
+    name: 'White',
+    color: '#fff'
+  }];
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_4__.useEffect)(() => {
+    setColor(isWhite ? palette[0].color : palette[1].color);
     if (illustrations.length === 0) {
       getRandomIllustrations(numberOfItems);
     }
@@ -122,8 +132,8 @@ function Edit({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
           title: "Settings",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
             label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Number of Illustrations', 'decorative-banner-block'),
@@ -131,9 +141,38 @@ function Edit({
             onChange: value => updateNumberOfItems(value),
             min: 1,
             max: 4
-          }),
-          // !hasRandomIllustrations && (
-          illustrations.map((illustration, index) => {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.RangeControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Figures size', 'decorative-banner-block')
+            // help={__('Figures size in pixels','decorative-banner-block')}
+            ,
+            value: size,
+            onChange: size => setAttributes({
+              size
+            }),
+            min: 50,
+            max: 150,
+            allowReset: true,
+            resetFallbackValue: 150
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.BaseControl, {
+            label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color', 'decorative-banner-block'),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
+              disableCustomColors: true,
+              colors: palette,
+              value: color,
+              onChange: color => {
+                if (color) {
+                  setAttributes({
+                    isWhite: color !== '#fff'
+                  });
+                  setColor(color);
+                }
+              },
+              clearable: false
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Set Illustrations', 'decorative-banner-block'),
+          children: [illustrations.map((illustration, index) => {
             return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
               label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)(`Illustration ${index + 1}`, 'decorative-banner-block'),
               options: illustrationOptions,
@@ -149,14 +188,23 @@ function Edit({
             onClick: () => getRandomIllustrations(numberOfItems),
             children: "Shuffle Illustrations"
           })]
-        })
+        })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
-      children: illustrations.map((illustration, index) => {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-          className: `illustration child-${index + 1} ${illustration}`
-        });
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: "decoration-wrapper",
+        style: {
+          backgroundColor: isWhite && 'var(--wp--preset--color--green-pea)'
+        },
+        children: illustrations.map((illustration, index) => {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            className: `illustration child-${index + 1} ${illustration} ${isWhite && 'white'}`,
+            style: {
+              width: `${size}px`
+            }
+          });
+        })
       })
     })]
   });
@@ -238,14 +286,25 @@ function save({
   attributes
 }) {
   const {
-    illustrations
+    illustrations,
+    size,
+    isWhite
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save(),
-    children: illustrations.map((illustration, index) => {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: `illustration child-${index + 1} ${illustration}`
-      });
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "decoration-wrapper",
+      style: {
+        backgroundColor: isWhite && 'var(--wp--preset--color--green-pea)'
+      },
+      children: illustrations.map((illustration, index) => {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: `illustration child-${index + 1} ${illustration} ${isWhite && 'white'}`,
+          style: {
+            width: `${size}px`
+          }
+        });
+      })
     })
   });
 }
@@ -342,7 +401,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"tails2tell/decorative-banner","version":"0.1.0","title":"Decorative Banner","category":"design","icon":"pets","description":"Decorative banner with 4 illustrations hidden according the viewport width.","example":{},"supports":{"html":false,"spacing":{"margin":true,"padding":true}},"textdomain":"decorative-banner","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"illustrations":{"type":"array","default":[]},"hasRandomIllustrations":{"type":"boolean","default":true},"numberOfItems":{"type":"integer","default":4}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"tails2tell/decorative-banner","version":"0.1.0","title":"Decorative Banner","category":"design","icon":"pets","description":"Decorative banner with 4 illustrations hidden according the viewport width.","example":{},"supports":{"html":false,"spacing":{"margin":true,"padding":true}},"textdomain":"decorative-banner","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"illustrations":{"type":"array","default":[]},"size":{"type":"integer","default":150},"numberOfItems":{"type":"integer","default":4},"isWhite":{"type":"boolean","default":false}}}');
 
 /***/ })
 
